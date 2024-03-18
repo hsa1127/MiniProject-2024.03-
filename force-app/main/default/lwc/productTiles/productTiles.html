@@ -1,0 +1,13 @@
+<!-- productTiles.html -->
+<template>
+    <!-- productList 배열의 각 항목에 대해 c-product-tile 컴포넌트를 반복적으로 렌더링 -->
+    <template for:each={productList} for:item="product">
+        <!-- 각 제품 타일에 제품 데이터, 선택된 제품 ID, 그리고 이벤트 핸들러를 바인딩 -->
+        <c-product-tile 
+            product={product} 
+            key={product.Id}
+            onproductselected={handleProductSelected} 
+            selected-product-id={selectedProductId}>
+        </c-product-tile>
+    </template>
+</template>

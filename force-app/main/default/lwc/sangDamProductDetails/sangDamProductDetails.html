@@ -1,0 +1,13 @@
+<template>
+    <template if:true={product}>
+        <div class="product-details">
+            <h2>{product.Name}</h2>
+            <p>제품 코드 : {product.ProductCode}</p>
+            <p>가격 : {product.Unit_Price__c}</p>
+            <p>제품 설명 : {product.Descrition}</p>
+    </div>
+    </template>
+    <div if:true={error}>
+        <p>제품 정보를 불러오는 데 문제가 발생했습니다.</p>
+    </div>
+</template>

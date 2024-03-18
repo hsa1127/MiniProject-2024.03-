@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VoCType__c</fullName>
+    <externalId>false</externalId>
+    <label>상담유형</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>단순문의</fullName>
+                <default>false</default>
+                <label>단순문의</label>
+            </value>
+            <value>
+                <fullName>고장</fullName>
+                <default>false</default>
+                <label>고장</label>
+            </value>
+            <value>
+                <fullName>교환</fullName>
+                <default>false</default>
+                <label>교환</label>
+            </value>
+            <value>
+                <fullName>환불</fullName>
+                <default>false</default>
+                <label>환불</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,187 @@
+<!-- productDetail.html -->
+
+<template>
+		
+    <template if:false={wiredProduct.data}>
+        <lightning-card>
+            <span class="slds-align_absolute-center no-product-height bold-blue">{label.labelPleaseSelectAItem}</span>
+        </lightning-card>
+    </template>
+    <template if:true={wiredProduct.data}>
+        <lightning-tabset variant="scoped">
+            <lightning-tab label={label.labelDetails}>
+
+
+                <lightning-card title="판매 정보 입력" icon-name="standard:warranty_term">
+                    <div class="slds-m-around_small">
+                        <p class="product-title center-aligned-group">제품 선택</p>
+                        <!-- 여기에 제품 선택 로직 구현 -->
+                            <!-- 선택된 제품 정보 표시 -->
+                        <div class="center-aligned-group">
+                            <div if:true={selectedProductId} class="product-detail-container">
+                                <!-- 선택된 제품 ID: {selectedProductId} -->
+                                <!-- 여기에 추가적으로 선택된 제품의 이름, 이미지 등을 표시할 수 있습니다. -->
+                                <lightning-record-view-form record-id={selectedProductId} object-api-name='Product__c' density='compact'>
+                                    <lightning-output-field field-name="ProductType__c"></lightning-output-field>
+                                    <lightning-output-field field-name="Name"></lightning-output-field>
+                                    <lightning-output-field field-name="ProductCode__c"></lightning-output-field>
+                                    <lightning-output-field field-name="UnitPrice__c"></lightning-output-field>
+                                </lightning-record-view-form>
+                            </div>
+                        </div>
+                        <div class="center-aligned-group">
+                            <div class="quantity-selector product-detail-container">
+                                <div class="slds-p-around_medium lgc-bg">
+                                    <lightning-input type="number" label="수량" value={quantity} onchange={handleQuantityChange} min="1"></lightning-input>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="center-aligned-group">
+                            <div class="quantity-selector product-detail-container">
+                                <lightning-button-group>
+                                    <lightning-button label="" onclick={decreaseQuantity} icon-name="utility:dash"></lightning-button>
+                                    <lightning-button class="center-aligned-group add-product-button" variant="brand-outline" label="제품 추가" title="제품 추가" icon-name="utility:download" 
+                                        onclick={addToCart}>
+                                    </lightning-button>
+                                    <lightning-button label="" onclick={increaseQuantity} icon-name="utility:add"></lightning-button>
+                                </lightning-button-group>
+                            </div>
+                        </div>
+                        <!-- 추가된 제품 목록 표시 -->
+                        <template if:true={cartItems}>
+                            <template if:true={cartItems}>
+                                <lightning-card title="장바구니" icon-name="standard:webcart">
+                                    <div class="center-aligned-group">
+                                        <div class="slds-p-around_small product-detail-container">
+                                            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                                <thead>
+                                                    <tr class="slds-line-height_reset">
+                                                        <th class="" scope="col">
+                                                            <div class="slds-truncate" title="Product Name">제품명</div>
+                                                        </th>
+                                                        <th class="" scope="col">
+                                                            <div class="slds-truncate" title="Quantity">수량</div>
+                                                        </th>
+                                                        <th class="" scope="col">
+                                                            <div class="slds-truncate" title="Total Price">가격</div>
+                                                        </th>
+                                                        <th class="" scope="col">
+                                                            <div class="slds-truncate" title="itemDelete"></div>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <template for:each={cartItems} for:item="item">
+                                                        <tr key={item.productId}>
+                                                            <td data-label="Product Name">
+                                                                <div class="slds-truncate">{item.productName}</div>
+                                                            </td>
+                                                            <td data-label="Quantity">
+                                                                <div class="slds-truncate">{item.quantity}</div>
+                                                            </td>
+                                                            <td data-label="Total Price">
+                                                                <div class="slds-truncate">{item.formattedTotalItemPrice}</div> <!-- 포맷된 항목별 총 가격 표시 -->
+                                                            </td>
+                                                            <td>
+                                                                <lightning-button-icon icon-name="utility:close" 
+                                                                    alternative-text="Delete"
+                                                                    title="Delete"
+                                                                    data-id={item.productId}
+                                                                    onclick={deleteItem}
+                                                                    class="small-delete-icon">
+                                                                </lightning-button-icon>
+                                                            </td>
+                                                        </tr>
+                                                    </template>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </template>
+                        </template>
+                        <div class="center-aligned-group">
+                            <div class="slds-p-around_small product-detail-container">
+                                <lightning-helptext content="할인율은 최대 20%까지만 설정 가능합니다."></lightning-helptext>
+                                <lightning-slider
+                                    label="할인율"
+                                    value={discountPercent}
+                                    onchange={handleDiscountPercentChange}
+                                    step="1"
+                                    min="0"
+                                    max="20"
+                                    title="할인율은 최대 20%까지만 설정 가능합니다">
+                                </lightning-slider>
+                            </div>
+                        </div>
+                        <div class="center-aligned-group below-date">
+                            <div class="slds-p-around_small product-detail-container">
+                                <lightning-input
+                                type="date"
+                                name="orderDate"
+                                label="판매일자"
+                                value={orderDate}
+                                onchange={onDateOrderedChange}
+                                required
+                                class="validateMe"
+                                message-when-value-missing="판매일자를 반드시 입력해주세요">
+                            </lightning-input>
+                            </div>
+                        </div>
+                        <template if:true={cartItems}>
+                            <lightning-card title="총 상품 금액" icon-name="standard:price_adjustment_matrix">
+                                <div class="aligned-group below-date">
+                                    <div class="c-container center-aligned-group">
+                                        <lightning-layout>
+                                            <lightning-layout-item padding="around-small">
+                                                <div class="header-column">
+                                                    <p class="field-title" title="총 가격">총 가격</p>
+                                                    <p>
+                                                        <span title=""><strong>{formattedOriginalTotalPrice}</strong></span>
+                                                    </p>
+                                                </div>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item padding="around-small">
+                                                <div class="header-column">
+                                                    <p class="field-title" title="할인 적용가">할인 적용가</p>
+                                                    <p>
+                                                        <span title=""><strong>{formattedFinalPrice}</strong></span>
+                                                    </p>
+                                                </div>
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                    </div>
+
+                                    <div class="c-container center-aligned-group">
+                                        <lightning-layout>
+                                            <lightning-layout-item padding="around-small">
+                                                <div class="header-column">
+                                                    <p class="field-title" title="할인율">할인율</p>
+                                                    <p>
+                                                        <span title="">{discountPercent}%</span>
+                                                    </p>
+                                                </div>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item padding="around-small">
+                                                <div class="header-column">
+                                                    <p class="field-title" title="할인금액">할인금액</p>
+                                                    <p>
+                                                        <span title="">{formattedDiscountAmount}</span>
+                                                    </p>
+                                                </div>
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                    </div>
+                                </div>
+                            </lightning-card>
+                        </template>
+                        <lightning-button class="center-aligned-group" variant="brand" label="판매 등록" title="판매 등록" icon-name="utility:upload"
+                            onclick={createOrder}>
+                        </lightning-button>
+                    </div>
+                </lightning-card>
+            </lightning-tab>
+        </lightning-tabset>
+    </template>
+
+</template>

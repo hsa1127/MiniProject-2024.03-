@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>others</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ProductType__c</field>
+        <operation>equals</operation>
+        <value>Accessory</value>
+    </filters>
+    <label>주변기기</label>
+</ListView>

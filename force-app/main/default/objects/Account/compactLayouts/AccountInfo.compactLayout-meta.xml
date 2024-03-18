@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AccountInfo</fullName>
+    <fields>Name</fields>
+    <fields>Phone__c</fields>
+    <fields>FirstBranch__c</fields>
+    <fields>AccountType__c</fields>
+    <fields>SupportTier__c</fields>
+    <fields>LeadContentsCnt__c</fields>
+    <fields>VoCCount__c</fields>
+    <fields>Last90DaysTotalPrice__c</fields>
+    <fields>TotalPrice__c</fields>
+    <label>고객정보</label>
+</CompactLayout>

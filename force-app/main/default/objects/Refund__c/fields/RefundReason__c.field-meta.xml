@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RefundReason__c</fullName>
+    <externalId>false</externalId>
+    <label>환불사유</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>제품불량</fullName>
+                <default>false</default>
+                <label>제품불량</label>
+            </value>
+            <value>
+                <fullName>오배송</fullName>
+                <default>false</default>
+                <label>오배송</label>
+            </value>
+            <value>
+                <fullName>단순변심</fullName>
+                <default>false</default>
+                <label>단순변심</label>
+            </value>
+            <value>
+                <fullName>기타사유</fullName>
+                <default>false</default>
+                <label>기타사유</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

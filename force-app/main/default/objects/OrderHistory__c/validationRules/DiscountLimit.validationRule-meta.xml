@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DiscountLimit</fullName>
+    <active>true</active>
+    <errorConditionFormula>(DiscountPercent__c &gt; 0.2)</errorConditionFormula>
+    <errorDisplayField>DiscountPercent__c</errorDisplayField>
+    <errorMessage>최대 할인율은 20% 입니다.</errorMessage>
+</ValidationRule>

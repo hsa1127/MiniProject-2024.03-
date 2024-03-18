@@ -1,0 +1,47 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_3-of-5">
+            <lightning-card variant="Narrow" title="상담 내역" icon-name="standard:messaging_conversation">
+                <div class="slds-m-around_large">
+                    <div class="slds-clearfix">
+                        <div class="slds-float_left slds-m-top_medium">
+                            <lightning-button-group>
+                                <lightning-button label="생성" onclick={handleNew}></lightning-button>
+                                <lightning-button label="새로고침" onclick={handleRefresh}></lightning-button>
+                            </lightning-button-group>
+                        </div>
+                        <div class="slds-float_right slds-m-bottom_small">
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <lightning-input label="고객명 검색" name="customerNameSearch" value={searchKeyword}
+                                        onchange={handleSearchKeywordChange}></lightning-input>
+                                </div>
+                                <div class="slds-col slds-m-top_large">
+                                    <lightning-button label="검색" onclick={handleSearch}></lightning-button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-scrollable_y"  style="height:15rem" tabindex="0">
+                        <lightning-datatable key-field="Id" data={sangdams} columns={columns} hide-checkbox-column
+                            onrowaction={handleRowAction}></lightning-datatable>
+                    </div>
+                </div>
+            </lightning-card>
+        </div>
+        <!-- 상담내역 자세히보기 및 수정하기 -->
+        <div class="slds-col slds-size_2-of-5">
+            <template if:true={showChildComponent}>
+                <c-off-line onclose={handleCloseOffline}></c-off-line>
+            </template>
+            <template if:true={isDetailViewVisible}>
+                <c-sang-dam-view-form record-id={selectedRecordId}
+                    onclose={handleCloseDetailView}></c-sang-dam-view-form>
+            </template>
+            <template if:true={isEditFormVisible}>
+                <c-sang-dam-edit-form record-id={selectedRecordId} onclose={handleEditFormClose}
+                    onsavecompleted={handleSaveCompleted}></c-sang-dam-edit-form>
+            </template>
+        </div>
+    </div>
+</template>

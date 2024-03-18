@@ -1,0 +1,27 @@
+<template>
+    <lightning-card>
+        <div class="slds-m-around_medium">
+            <lightning-record-view-form record-id={recordId} object-api-name="VoC__c">
+                <lightning-messages></lightning-messages>
+                <div class="slds-m-bottom_medium">
+                    <lightning-output-field field-name="AccountId__c"></lightning-output-field>
+                </div>
+                <div class="slds-m-bottom_medium">
+                    <lightning-output-field field-name="ContactPhone__c"></lightning-output-field>
+                </div>
+                <div class="slds-m-bottom_medium">
+                    <lightning-output-field field-name="VoCType__c"></lightning-output-field>
+                </div>
+                <div class="slds-m-bottom_medium">
+                    <lightning-output-field field-name="Product__c"></lightning-output-field>
+                </div>
+                <div class="slds-m-bottom_medium">
+                    <lightning-output-field field-name="VoCProgress__c"></lightning-output-field>
+                </div>
+                <div class="slds-m-bottom_medium">
+                    <lightning-output-field field-name="Description__c"></lightning-output-field>
+                </div>
+            </lightning-record-view-form>
+        </div>
+    </lightning-card>
+</template>

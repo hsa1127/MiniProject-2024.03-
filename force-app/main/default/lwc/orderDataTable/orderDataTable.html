@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_3-of-4">
+            <lightning-card title="주문 내역" icon-name="custom:custom14">
+                <div class="slds-m-around_medium">
+                    <div class="slds-clearfix slds-m-bottom_small">
+                        <div class="slds-float_right">
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <lightning-input type="text" label="고객명 검색"
+                                    value={searchKey} onchange={handleSearchKeyChange}></lightning-input>
+                                </div>
+                                <div class="slds-float_left">
+                                    <div class="slds-col slds-m-top_large">
+                                        <lightning-button label="검색" title="검색" onclick={handleSearch} disabled={loading}
+                                            class="slds-m-left_x-small"></lightning-button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-m-around_medium">
+                    <div class="slds-scrollable_y" style="height:25rem" tabindex="0">
+                        <lightning-datatable key-field="Id" data={orderHistories} columns={columns}
+                            onrowaction={handleRowAction} hide-checkbox-column show-row-number-column>
+                        </lightning-datatable>
+                    </div>
+                </div>
+            </lightning-card>
+        </div>
+    </div>
+</template>

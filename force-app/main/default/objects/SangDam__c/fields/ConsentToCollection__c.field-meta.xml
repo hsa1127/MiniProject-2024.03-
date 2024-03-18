@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ConsentToCollection__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>개인정보 수집 및 이용동의</description>
+    <externalId>false</externalId>
+    <inlineHelpText>개인정보 수집 및 이용동의를 해주면 이름, 연락처, 이메일 기록으로 향후 상담에 도움.</inlineHelpText>
+    <label>개인정보 수집 및 이용동의</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

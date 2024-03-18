@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OrderNumber__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <externalId>false</externalId>
+    <label>주문번호</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <filterItems>
+            <field>OrderHistory__c.SalesBranch__r.Name</field>
+            <operation>equals</operation>
+            <valueField>$User.Department</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Profile.Id</field>
+            <operation>equals</operation>
+            <value>00eIR000001fnLEYAY</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>OrderHistory__c</referenceTo>
+    <relationshipLabel>환불내역</relationshipLabel>
+    <relationshipName>HistoryOrderNumbers</relationshipName>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

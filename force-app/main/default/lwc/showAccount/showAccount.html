@@ -1,0 +1,20 @@
+<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="12">
+    <lightning-card title={title} onclick={handleAccountClick}>
+        <template if:true={account}>
+            <lightning-layout key={account.Id} class="slds-box slds-m-around-small">
+                <lightning-layout-item padding="around-small" size="12">
+                    <b>고객명: {account.Name}</b>
+                    <p>고객 전화번호: {account.Phone__c}</p>
+                    <p>고객 등급: {account.SupportTier__c}</p>
+                    <p if:true={account.FirstBranch__r}>상담 지점: {account.FirstBranch__r.Name}</p>
+                    <p if:true={account.TotalPrice__c}> 누적 구매 금액: {formattedTotalPrice} 원</p>
+                </lightning-layout-item>
+            </lightning-layout>
+            <c-purchase-history account-id={account.Id}></c-purchase-history>
+        </template>
+    </lightning-card>
+</lightning-layout-item>
+</lightning-layout>
+</template>

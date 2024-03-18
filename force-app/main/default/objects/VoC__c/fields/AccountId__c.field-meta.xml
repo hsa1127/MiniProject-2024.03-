@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AccountId__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>account에서 고객명을 lookup해서 가져옴</description>
+    <externalId>false</externalId>
+    <label>고객명</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.AccountType__c</field>
+            <operation>equals</operation>
+            <value>구매고객</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>VoC</relationshipLabel>
+    <relationshipName>VoC</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

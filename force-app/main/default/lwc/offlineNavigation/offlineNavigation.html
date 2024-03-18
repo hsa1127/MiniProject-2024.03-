@@ -1,0 +1,52 @@
+<template>
+<div class="slds-grid slds-wrap">
+    <div style="width: 200px; background-color: white" class="slds-col slds-size_1-of-4">
+        <lightning-vertical-navigation selected-item="account" onselect={handleNavigation}>
+            <lightning-vertical-navigation-section label="메뉴">
+                <lightning-vertical-navigation-item-icon label="고객 정보" name="account" icon-name="utility:contact"></lightning-vertical-navigation-item-icon>
+                <lightning-vertical-navigation-item-icon label="상담 내역" name="sangdam" icon-name="utility:app_web_messaging"></lightning-vertical-navigation-item-icon>
+                <lightning-vertical-navigation-item-icon label="주문 내역" name="order" icon-name="utility:customer"></lightning-vertical-navigation-item-icon>
+                <lightning-vertical-navigation-item-icon label="제품 현황" name="product" icon-name="utility:desktop"></lightning-vertical-navigation-item-icon>
+            </lightning-vertical-navigation-section>
+            <lightning-vertical-navigation-overflow>
+                <lightning-vertical-navigation-item label="노트북" name="laptop"></lightning-vertical-navigation-item>
+                <lightning-vertical-navigation-item label="주변기기" name="accessory"></lightning-vertical-navigation-item>
+            </lightning-vertical-navigation-overflow>
+        </lightning-vertical-navigation>
+    </div>
+
+    <!-- 네비게이션에 있는 해당 필드를 누르면 해당 필드의 내용 보여주기 -->
+    <div class="slds-col slds-size_3-of-4">
+        <div>
+            <template if:true={isProductSelected}>
+                <c-product-data-table></c-product-data-table>
+            </template>
+        </div>
+        <div>
+            <template if:true={isAccountSelected}>
+                <c-account-data-table></c-account-data-table>
+            </template>
+        </div>
+        <div>
+            <template if:true={isOrderSelected}>
+                <c-order-data-table></c-order-data-table>
+            </template>
+        </div>
+        <div >
+            <template if:true={isSangdamSelected}>
+                <c-sang-dam-data-table></c-sang-dam-data-table>
+            </template>
+        </div>
+        <div>
+            <template if:true={isLaptopSelected}>
+                <c-laptop-data-table></c-laptop-data-table>
+            </template>
+        </div>
+        <div>
+            <template if:true={isAccessoryelected}>
+                <c-accessory-data-table></c-accessory-data-table>
+            </template>
+        </div>
+    </div>
+</div>
+</template>

@@ -1,0 +1,26 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-card variant="Narrow" title="노트북 제품현황" icon-name="standard:checkout">
+                <div class="slds-m-around_medium">
+                    <div class="slds-scrollable_y" style="height:30rem" tabindex="0">
+                        <lightning-datatable key-field="Id" data={laptops} columns={columns} hide-checkbox-column
+                            onrowaction={handleRowAction}>
+                        </lightning-datatable>
+                    </div>
+                </div>
+            </lightning-card>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <div style="height:15rem" tabindex="0">
+                <template if:true={selectedImageUrl}>
+                    <lightning-card title="제품 사진" icon-name="standard:file">
+                        <div class="slds-m-around_medium">
+                            <img src={selectedImageUrl} alt="Selected Product Image" />
+                        </div>
+                    </lightning-card>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

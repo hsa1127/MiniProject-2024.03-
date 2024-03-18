@@ -1,0 +1,28 @@
+<template>
+    <lightning-tabset variant="scoped">
+        <lightning-tab label="고객상담"> 
+            <h1>반드시 상담내역을 기록해주세요</h1>
+            <lightning-record-edit-form object-api-name="Case" onsuccess={handleSuccess} onerror={handleError}>
+            <lightning-messages> </lightning-messages>
+                <lightning-input-field field-name="AccountId" value={accountId}></lightning-input-field>
+                <lightning-input-field field-name="ContactId" value={contactId}></lightning-input-field>
+                <lightning-input-field field-name="Status" value={Status}></lightning-input-field>
+                <lightning-input-field field-name="Reason" value={Reason}></lightning-input-field>
+                <lightning-input-field field-name="ProductFamily__c" value={ProductFamily__c}></lightning-input-field>
+                <lightning-input-field field-name="Product__c" value={Product__c}></lightning-input-field>
+                <lightning-input-field field-name="Description__c" value={caseDescription} required></lightning-input-field>
+                <lightning-button class="slds-m-top_small" type="submit" label="저장하기" onclick={saveCase}></lightning-button>
+                <lightning-button class="slds-m-top_small" label="초기화" onclick={resetForm}></lightning-button>
+            </lightning-record-edit-form>
+        </lightning-tab>
+        <lightning-tab label="상담이력">
+            <h1>상담이력</h1>
+            <lightning-datatable
+                key-field="id"
+                data={data}
+                columns={columns}
+                hide-checkbox-column="true">
+            </lightning-datatable>
+    </lightning-tab>    
+    </lightning-tabset>
+</template>

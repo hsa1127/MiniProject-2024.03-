@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OrderAccountMatch</fullName>
+    <active>true</active>
+    <errorConditionFormula>OrderNumber__r.AccountName__c   &lt;&gt;   AccountName__c</errorConditionFormula>
+    <errorDisplayField>OrderNumber__c</errorDisplayField>
+    <errorMessage>해당 고객의 주문이 아닙니다.</errorMessage>
+</ValidationRule>

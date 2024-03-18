@@ -1,0 +1,24 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium">
+            <dl class="slds-list_horizontal slds-wrap">
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="고객명"><b>고객명 :</b></dt>
+                <dd class="slds-item_detail slds-truncate">{accountName}</dd>
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="상담일자"><b>상담일자 :</b></dt>
+                <dd class="slds-item_detail slds-truncate">{sangDamDate}</dd>
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="상담 진행현황"><b>상담 진행현황 :</b></dt>
+                <dd class="slds-item_detail slds-truncate">{sangDamProgress}</dd>
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="상담 제품목록"><b>상담 제품목록 :</b></dt>
+                    <dd class="slds-item_detail slds-truncate">
+                        <template for:each={productList} for:item="product">
+                            <span key={product}>{product}</span>
+                        </template>
+                    </dd>
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="상담내역"><b>상담내역 :</b></dt>
+                <dd class="slds-item_detail slds-truncate">
+                    <lightning-formatted-rich-text value={sangDamDescription}></lightning-formatted-rich-text>
+                </dd>
+            </dl>
+        </div>
+    </lightning-card>
+</template>

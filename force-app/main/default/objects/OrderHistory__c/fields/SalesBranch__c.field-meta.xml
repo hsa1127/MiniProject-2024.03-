@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesBranch__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <externalId>false</externalId>
+    <label>판매점</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <filterItems>
+            <field>$User.Department</field>
+            <operation>equals</operation>
+            <valueField>Branch__c.Name</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Profile.Id</field>
+            <operation>equals</operation>
+            <value>00eIR000001fnLEYAY</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Branch__c</referenceTo>
+    <relationshipLabel>주문내역</relationshipLabel>
+    <relationshipName>SalesBranches</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

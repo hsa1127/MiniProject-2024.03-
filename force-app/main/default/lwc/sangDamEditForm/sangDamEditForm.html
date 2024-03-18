@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="상담 내역 수정" icon-name="standard:messaging_conversation">
+        <div class="slds-m-around_medium">
+            <lightning-record-edit-form object-api-name="SangDam__c" record-id={recordId} onsuccess={handleSuccess} 
+            onerror={handleError} onsubmit={handleSubmit}>
+                <lightning-messages></lightning-messages>
+                <lightning-input-field field-name="ConsentToCollection__c"></lightning-input-field>
+                <lightning-input-field field-name="AccountName__c"></lightning-input-field>
+                <lightning-input type="tel" name="phoneNumber" label="전화번호" placeholder="010-0000-0000"
+                    pattern="(^010-\d{4}-\d{4}$)|(^02-\d{3,4}-\d{4}$)|(^0[3-6]-\d{3,4}-\d{4}$)" onchange={handlePhoneChange} value={phoneNumber}></lightning-input>
+                <lightning-input-field field-name="Email__c"></lightning-input-field>
+                <lightning-input-field field-name="SangDamDate__c" disabled></lightning-input-field>
+                <lightning-input-field field-name="StoreName__c" disabled></lightning-input-field>
+                <lightning-input-field field-name="SangDamProgress__c"></lightning-input-field>
+                <lightning-input-field field-name="ProductList__c"></lightning-input-field>
+                <lightning-input-field field-name="SangDamDescription__c"></lightning-input-field>
+                <div class="slds-m-top_medium">
+                    <lightning-button-group>
+                        <lightning-button variant="neutral" type="submit" name="save" label="저장"></lightning-button>
+                        <lightning-button variant="neutral" name="cancel" label="닫기 / 수정취소"
+                            onclick={closeModal}></lightning-button>
+                    </lightning-button-group>
+                </div>
+            </lightning-record-edit-form>
+        </div>
+    </lightning-card>
+</template>

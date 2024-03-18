@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="제품 사진" icon-name="standard:file">
+        <div if:true={imageUrl} class="slds-m-around_medium">
+            <img src={imageUrl} alt="Product Image" />
+        </div>
+        <div if:false={imageUrl} class="slds-m-around_medium">
+            No image available.
+        </div>
+    </lightning-card>
+</template>

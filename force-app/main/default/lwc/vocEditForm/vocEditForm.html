@@ -1,0 +1,25 @@
+<template>
+    <div class="voc-detail-container">
+        <lightning-card>
+            <div class="slds-m-around_medium">
+                <lightning-record-edit-form object-api-name="VoC__c" record-id={recordId} onsubmit={handleSubmit}
+                    onsuccess={handleSuccess} onerror={handleError}>
+                    <div class="slds-grid slds-grid_vertical">
+                        <div class="slds-col">
+                            <div class="slds-m-around_medium slds-float_right">
+                                <lightning-button class="slds-m-top_small" variant="brand" type="submit" label="저장"></lightning-button>
+                            </div>
+                        </div>
+                    </div>
+                    <lightning-messages></lightning-messages>
+                    <lightning-input-field field-name="AccountId__c" disabled></lightning-input-field>
+                    <lightning-input-field field-name="ContactPhone__c" disabled></lightning-input-field>
+                    <lightning-input-field field-name="VoCType__c"></lightning-input-field>
+                    <lightning-input-field field-name="Product__c"></lightning-input-field>
+                    <lightning-input-field field-name="VoCProgress__c"></lightning-input-field>
+                    <lightning-input-field field-name="Description__c"></lightning-input-field>
+                </lightning-record-edit-form>
+            </div>
+        </lightning-card>
+    </div>
+</template>

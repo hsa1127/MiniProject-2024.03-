@@ -1,0 +1,39 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div style="width: 200px; background-color: white" class="slds-col slds-size_1-of-4">
+            <lightning-vertical-navigation selected-item="voc" onselect={handleNavigation}>
+                <lightning-vertical-navigation-section label="메뉴">
+                    <lightning-vertical-navigation-item-icon label="VoC 상담" name="voc" icon-name="utility:call"></lightning-vertical-navigation-item-icon>
+                    <lightning-vertical-navigation-item-icon label="VoC 상담 내역" name="vocsangdam" icon-name="utility:case"></lightning-vertical-navigation-item-icon>
+                    <lightning-vertical-navigation-item-icon label="주문 내역" name="order" icon-name="utility:customer"></lightning-vertical-navigation-item-icon>
+                    <lightning-vertical-navigation-item-icon label="고객 상담 내역" name="sangdam" icon-name="utility:app_web_messaging"></lightning-vertical-navigation-item-icon>
+                </lightning-vertical-navigation-section>
+            </lightning-vertical-navigation>
+        </div>
+    
+        <!-- 네비게이션에 있는 해당 필드를 누르면 해당 필드의 내용 보여주기 -->
+        <div class="slds-col slds-size_3-of-4">
+            <div>
+                <template if:true={isVocSelected}>
+                    <c-show-account></c-show-account>
+                    <c-voc-input></c-voc-input>
+                </template>
+            </div>
+            <div>
+                <template if:true={isVocSangdamSelected}>
+                    <c-voc-data-table></c-voc-data-table>
+                </template>
+            </div>
+            <div>
+                <template if:true={isOrderSelected}>
+                    <c-order-data-table-for-voc></c-order-data-table-for-voc>
+                </template>
+            </div>
+            <div>
+                <template if:true={isSangdamSelected}>
+                    <c-sang-dam-data-table-for-voc></c-sang-dam-data-table-for-voc>
+                </template>
+            </div>
+        </div>
+    </div>
+    </template>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>wido__c</fullName>
+    <displayLocationInDecimal>false</displayLocationInDecimal>
+    <externalId>false</externalId>
+    <label>위도경도</label>
+    <required>false</required>
+    <scale>8</scale>
+    <trackTrending>false</trackTrending>
+    <type>Location</type>
+</CustomField>

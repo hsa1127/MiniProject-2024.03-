@@ -1,0 +1,25 @@
+<template>
+    <lightning-card class="custom-card" variant="Narrow" title="상담 작성" icon-name="standard:messaging_conversation">
+        <div class="slds-text-align_center slds-p-around_medium">
+            <h2 class="slds-text-heading_medium">FourBeeTek 상담</h2>
+        </div>
+        <div class="slds-m-around_medium">
+        <lightning-record-edit-form object-api-name="SangDam__c" record-id={recordId} onsubmit={handleSubmit}
+            onsuccess={handleSuccess} onerror={handleError}>
+            <lightning-messages></lightning-messages>
+            <lightning-input label="고객명" name="AccountName__c" value={customerName} onchange={handleNameChange} class="slds-m-horizontal_xx-small"></lightning-input>
+            <lightning-input label="전화번호" name="PhoneNumber__c" value={customerPhone} onchange={handlePhoneChange} class="slds-m-horizontal_xx-small"></lightning-input>
+            <lightning-input label="이메일" name="Email__c" value={customerEmail} onchange={handleEmailChange} class="slds-m-horizontal_xx-small"></lightning-input>
+            <lightning-input-field field-name="SangDamDate__c" required></lightning-input-field>
+            <lightning-input-field field-name="ProductList__c"></lightning-input-field>
+            <lightning-input-field field-name="SangDamDescription__c"></lightning-input-field>
+            <div class="slds-grid slds-grid_align-end slds-m-right_small">
+                <lightning-button-group>
+                    <lightning-button type="submit" label="제출" class="slds-m-top_medium"></lightning-button>
+                    <lightning-button label="닫기" onclick={handleClose} class="slds-m-top_medium"></lightning-button>
+                </lightning-button-group>
+            </div>
+        </lightning-record-edit-form>
+        </div>
+    </lightning-card>
+</template>

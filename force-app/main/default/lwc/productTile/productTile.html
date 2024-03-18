@@ -1,0 +1,14 @@
+<template>
+    <!-- 제품 타일을 클릭하면 productClick 메서드가 호출됩니다. 제품이 선택된 상태인지에 따라 CSS 클래스가 결정됩니다. -->
+    <div class={productSelected} onclick={productClick}>
+        <!-- 제품 이미지와 이름을 표시하는 내부 타일 -->
+        <div class="innertile">
+            <!-- 제품 이미지; 이미지 URL은 product 객체의 Image_Url__c 필드에서 가져옵니다. -->
+            <img src={product.Image_Url__c} class="innertile" />
+            <!-- 제품 이름을 표시하는 하단 영역 -->
+                <div class="lower-third">
+                    <h1>{product.Name}</h1>
+                </div>
+        </div>
+    </div>
+</template>

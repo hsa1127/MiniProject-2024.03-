@@ -1,0 +1,9 @@
+.lgc-bg {
+    background-color: rgb(242 242 242);
+    padding: 1rem;
+    border: 10px;
+}
+
+.lgc-bg-inverse {
+    background-color: rgb(22 50 92);
+}

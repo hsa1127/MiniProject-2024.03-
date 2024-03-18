@@ -1,0 +1,40 @@
+<!-- productBrowserForm.html -->
+<template>
+    <div class="slds-var-m-bottom_small">
+        <!-- Lightning Card 컴포넌트를 사용하여 검색 UI 제공 -->
+        <lightning-card title="검색"
+                        icon-name="utility:search">
+            <!-- 카드 내부에 padding 적용 -->
+            <div class="slds-var-p-horizontal_small">
+                <!-- 가운데 정렬된 레이아웃으로 컴포넌트 그룹화 -->
+                <lightning-layout horizontal-align="center" >
+                    <!-- 제품 유형 선택 드롭다운 -->
+                    <lightning-layout-item
+                        padding="around-small"
+                        size="6">
+                            <lightning-combobox name="productType"
+                            label="제품 유형 선택"
+                            value={selectedType}
+                            placeholder="유형을 선택하세요"
+                            options={productTypes}
+                            onchange={handleTypeChange}></lightning-combobox>
+                    </lightning-layout-item>
+                    <!-- 제품 이름 선택 드롭다운, 제품 이름이 로드되었을 때만 표시 -->
+                    <lightning-layout-item
+                        padding="around-small"
+                        size="6">
+                            <lightning-combobox name="productName"
+                            label="제품 이름 선택"
+                            value={selectedProduct}
+                            placeholder="제품을 선택하세요"
+                            options={productNames}
+                            onchange={handleProductChange}
+                            if:true={productNames}></lightning-combobox>
+                    </lightning-layout-item>
+                </lightning-layout>
+    
+                <c-product-search-form></c-product-search-form>
+            </div>
+        </lightning-card>
+    </div>
+</template>

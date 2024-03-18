@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="상담 현황" icon-name="standard:answer_public">
+        <template if:true={sangdams.data}>
+            <div class="slds-box slds-m-horizontal_small">
+                <div class="slds-scrollable_y" style="height:18rem" tabindex="0">
+                    <lightning-datatable
+                        data={sangdams.data}
+                        columns={columns}
+                        key-field="Id"
+                        onrowaction={handleRowAction}>
+                    </lightning-datatable>
+                </div>
+            </div>
+            </template>
+        <template if:true={sangdams.error}>
+            <div class="slds-box slds-m-horizontal_small">
+                <p>고객 상담 정보가 없습니다. 다시 확인해주세요</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

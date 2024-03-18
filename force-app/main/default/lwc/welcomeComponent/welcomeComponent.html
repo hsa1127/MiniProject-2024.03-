@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="지점 정보" icon-name="custom:custom24">
+        <div class="slds-m-around_medium">
+            <template if:true={branches}>
+                <ul>
+                    <template for:each={branches} for:item="branch">
+                        <li key={branch.Id}>{branch.Name}</li>
+                    </template>
+                </ul>
+            </template>
+            <template if:false={branches}>
+                <p>관련 레코드가 없습니다.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

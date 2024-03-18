@@ -1,0 +1,48 @@
+.textarea-container .custom-textarea {
+    --lwc-textarea_Height: 200px; /* LWC의 CSS 변수를 사용하여 높이 조정 */
+}
+
+.textarea-container .slds-textarea {
+    resize: none; /* 크기 조절 기능 제거 */
+}
+
+
+
+.selected-values-container {
+    margin-top: 20px; /* 필요에 따라 조절 */
+    padding: 0 15px; /* 고객명 및 전화번호 필드와 일관된 패딩 적용 */
+}
+
+.selected-values {
+    text-align: left; /* 또는 'center'로 설정하여 가운데 정렬 */
+}
+
+
+.textarea-container {
+    margin-bottom: 12px; /* textarea와 제출 버튼 사이의 간격 */
+}
+
+.submit-container {
+    text-align: right; /* 버튼을 오른쪽으로 정렬 */
+}
+.checkbox-group-container {
+    margin-left: 20px; /* 원하는 여백 크기에 따라 조정 */
+}
+.centered-section {
+    max-width: 600px; /* 혹은 적절한 최대 폭 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+.date-input lightning-input {
+    max-width: 400px; /* 혹은 적절한 최대 폭 */
+    margin: 0 auto; /* 가운데 정렬 */
+    display: block; /* 블록 레벨 요소로 설정 */
+}
+.wide-dual-listbox lightning-dual-listbox {
+    width: 100%;
+    max-width: 600px;
+}
+
+.wide-dual-listbox .slds-dual-listbox__selected-item {
+    white-space: normal; /* 텍스트가 한 줄에 제한되지 않도록 변경합니다 */
+}

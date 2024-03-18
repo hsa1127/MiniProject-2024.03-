@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VoCProgress__c</fullName>
+    <description>상담진행현황</description>
+    <externalId>false</externalId>
+    <inlineHelpText>해당 상담자가 문제를 해결할 수 없는경우, CS 노트북팀에게 상담을 이관해야하는 경우에는 &apos;상담진행 / 상담이관&apos;을 선택하여 저장해야함.</inlineHelpText>
+    <label>상담 진행현황</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>상담시작</fullName>
+                <default>true</default>
+                <label>상담시작</label>
+            </value>
+            <value>
+                <fullName>상담진행 / 상담이관</fullName>
+                <default>false</default>
+                <label>상담진행 / 상담이관</label>
+            </value>
+            <value>
+                <fullName>상담종료</fullName>
+                <default>false</default>
+                <label>상담종료</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

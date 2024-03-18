@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <externalId>false</externalId>
+    <label>제품</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>아이디어패드 Slim3</fullName>
+                <default>false</default>
+                <label>아이디어패드 Slim3</label>
+            </value>
+            <value>
+                <fullName>2024 그램15</fullName>
+                <default>false</default>
+                <label>2024 그램15</label>
+            </value>
+            <value>
+                <fullName>Sword GF76</fullName>
+                <default>false</default>
+                <label>Sword GF76</label>
+            </value>
+            <value>
+                <fullName>2023 그램15</fullName>
+                <default>false</default>
+                <label>2023 그램15</label>
+            </value>
+            <value>
+                <fullName>젠북 14 OLED</fullName>
+                <default>false</default>
+                <label>젠북 14 OLED</label>
+            </value>
+            <value>
+                <fullName>2024 그램16</fullName>
+                <default>false</default>
+                <label>2024 그램16</label>
+            </value>
+            <value>
+                <fullName>갤럭시북4 프로</fullName>
+                <default>false</default>
+                <label>갤럭시북4 프로</label>
+            </value>
+            <value>
+                <fullName>갤럭시북3</fullName>
+                <default>false</default>
+                <label>갤럭시북3</label>
+            </value>
+            <value>
+                <fullName>프레데터 Helios Neo</fullName>
+                <default>false</default>
+                <label>프레데터 Helios Neo</label>
+            </value>
+            <value>
+                <fullName>아이디어패드 Slim1</fullName>
+                <default>false</default>
+                <label>아이디어패드 Slim1</label>
+            </value>
+            <value>
+                <fullName>키보드 K560</fullName>
+                <default>false</default>
+                <label>키보드 K560</label>
+            </value>
+            <value>
+                <fullName>키보드 F99</fullName>
+                <default>false</default>
+                <label>키보드 F99</label>
+            </value>
+            <value>
+                <fullName>키보드 CK01</fullName>
+                <default>false</default>
+                <label>키보드 CK01</label>
+            </value>
+            <value>
+                <fullName>키보드 G413</fullName>
+                <default>false</default>
+                <label>키보드 G413</label>
+            </value>
+            <value>
+                <fullName>키보드 GK893B</fullName>
+                <default>false</default>
+                <label>키보드 GK893B</label>
+            </value>
+            <value>
+                <fullName>마우스 SUPERLIGHT</fullName>
+                <default>false</default>
+                <label>마우스 SUPERLIGHT</label>
+            </value>
+            <value>
+                <fullName>마우스 MX Master</fullName>
+                <default>false</default>
+                <label>마우스 MX Master</label>
+            </value>
+            <value>
+                <fullName>마우스 DeathAdder</fullName>
+                <default>false</default>
+                <label>마우스 DeathAdder</label>
+            </value>
+            <value>
+                <fullName>마우스 M1300QB</fullName>
+                <default>false</default>
+                <label>마우스 M1300QB</label>
+            </value>
+            <value>
+                <fullName>마우스 G102</fullName>
+                <default>false</default>
+                <label>마우스 G102</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

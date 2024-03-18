@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="상담 내역 상세 정보" icon-name="standard:messaging_conversation">
+        <div class="slds-p-around_medium">
+            <dl class="slds-list_horizontal slds-wrap">
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="고객명"><b>고객명 :</b></dt>
+                <dd class="slds-item_detail slds-truncate">{accountName}</dd>
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="상담일자"><b>상담일자 :</b></dt>
+                <dd class="slds-item_detail slds-truncate">{sangDamDate}</dd>
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="상담 진행현황"><b>상담 진행현황 :</b></dt>
+                <dd class="slds-item_detail slds-truncate">{sangDamProgress}</dd>
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="상담 제품목록"><b>상담 제품목록 :</b></dt>
+                <dd class="slds-item_detail slds-truncate">{productList}</dd>
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="상담내역"><b>상담내역 :</b></dt>
+                <dd class="slds-item_detail slds-truncate">
+                    <lightning-formatted-rich-text value={sangDamDescription}></lightning-formatted-rich-text>
+                </dd>
+            </dl>
+            <div class="slds-m-top_medium">
+                <lightning-button label="닫기" title="닫기" onclick={handleClose} class="slds-m-auto"></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

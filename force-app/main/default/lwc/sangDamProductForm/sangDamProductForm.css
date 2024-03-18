@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+}
+
+.navigation {
+    width: 30%;
+    margin: 0.5rem;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    height: 100%;
+}
+
+.product-table {
+    width: 80%;
+}

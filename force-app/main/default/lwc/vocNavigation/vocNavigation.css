@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+}
+
+.navigation {
+    width: 20%;
+    margin: 0.5rem;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    height: 100%;
+    display: flex;
+}
+
+.table {
+    width: 80%;
+    right: 20%;
+    display: flex;
+}

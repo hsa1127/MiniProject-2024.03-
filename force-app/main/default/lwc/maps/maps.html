@@ -1,0 +1,16 @@
+<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="12">
+    <div class="slds-box">
+        <template if:true={mapMarkers.length}>
+            <lightning-map
+         map-markers={mapMarkers}
+        markers-title={markersTitle}
+        onmarkerselect={callMarkerHandler}
+        selected-marker-value={selectedMarker}>
+        </lightning-map>
+</template>
+    </div>
+</lightning-layout-item>
+</lightning-layout>
+</template>

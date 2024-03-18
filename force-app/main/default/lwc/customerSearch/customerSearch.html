@@ -1,0 +1,23 @@
+<!-- customerSearch.html -->
+<template>
+    <lightning-card title="고객 검색" icon-name="utility:search">
+        <lightning-input label="전화번호를 입력하세요" onchange={handlePhoneChange} ></lightning-input>
+        <template if:true={customers}>
+            <ul>
+                <template for:each={customers} for:item="customer">
+                    <li key={customer.Id} onclick={handleCustomerClick} data-customer-id={customer.Id}>
+                        {customer.Name} - {customer.Phone}
+                    </li>
+                </template>
+            </ul>
+        </template>
+        <template if:true={selectedCustomer}>
+            <div>
+                <p>고객 이름: {selectedCustomer.Name}</p>
+                <p>전화번호: {selectedCustomer.Phone}</p>
+                <p>등급: {selectedCustomer.SupportTier__c}</p>
+                <!-- 다른 필요한 정보들도 여기에 추가 -->
+            </div>
+        </template>
+    </lightning-card>
+</template>

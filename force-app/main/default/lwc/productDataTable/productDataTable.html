@@ -1,0 +1,12 @@
+<template>
+    <lightning-card  variant="Narrow"  title="제품현황" icon-name="standard:checkout">
+        <div class="slds-m-around_medium">
+            <lightning-datatable
+                key-field="Id"
+                data={products}
+                columns={columns}
+                hide-checkbox-column>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

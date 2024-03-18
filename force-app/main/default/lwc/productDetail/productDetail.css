@@ -1,0 +1,103 @@
+.bold-blue {
+    font-weight: bold;
+    color: hsl(147, 91%, 37%);
+    font-size: 15px;
+}
+
+.no-product-height {
+    height: 3rem;
+}  
+
+.bold-text {
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+/* .quantity-input-padding {
+    padding-left: 5px;
+} */
+
+.center-aligned-group {
+    display: flex;
+    justify-content: center;
+}
+
+.product-title {
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+.product-title1 {
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.padding-top {
+    padding-top: 10px;
+}
+
+.add-product-button {
+    margin-bottom: 1.5rem; 
+}
+
+.product-detail-container {
+    width: 80%; /* 또는 원하는 너비로 설정 */
+}
+
+.fix-width {
+    width: 25%;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+/* "-"와 "+" 버튼의 크기와 스타일을 조절하는 CSS */
+.border-filled {
+    height: auto;
+    padding: 0.25rem 0.5rem;
+}
+
+.quantity-input {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    width: 4rem; 
+    display: flex;
+    align-items: center;
+}
+
+.small-delete-icon lightning-button-icon {
+    --sds-c-button-icon-height: 1.5rem;
+    --sds-c-button-icon-width: 1.5rem;
+}
+
+.below-date {
+    margin-bottom: 1.5rem; 
+}
+
+.c-container {
+    border: 1px solid #d8dde6;
+    margin: 10px 54px 20px 54px;
+}
+
+.header-column {
+    padding: 0 2rem;
+}
+
+.field-title {
+    font-size: .75rem;
+    line-height: 1.25;
+    color: #54698d;
+    margin-bottom: .25rem;
+}
+
+.aligned-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

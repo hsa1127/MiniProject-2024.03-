@@ -1,0 +1,45 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-card variant="Narrow" title="고객 정보" icon-name="standard:customers">
+                <div class="slds-m-around_medium">
+                    <div class="slds-clearfix slds-m-bottom_small">
+                        <div class="slds-float_left">
+                            <div class="slds-col slds-m-top_large sslds-m-bottom_small">
+                                <lightning-button label="새로고침" onclick={handleRefresh}></lightning-button>
+                            </div>
+                        </div>
+                        <div class="slds-float_right">
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <lightning-spinner if:true={loading}></lightning-spinner>
+                                    <lightning-input label="고객명 검색" name="customerNameSearch" value={searchKeyword}
+                                        onchange={handleSearchKeywordChange}></lightning-input>
+                                </div>
+                                <div class="slds-float_left">
+                                    <div class="slds-col slds-m-top_large">
+                                        <lightning-button label="검색" onclick={handleSearch}></lightning-button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-scrollable_y" style="height:15rem" tabindex="0">
+                        <lightning-datatable key-field="Id" data={accounts} columns={columns} hide-checkbox-column
+                            onrowaction={handleView}>
+                        </lightning-datatable>
+                    </div>
+                </div>
+            </lightning-card>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <!--고객정보 자세히보기-->
+            <div>
+                <template if:true={selectedAccount}>
+                    <c-account-view-form account={selectedAccount}
+                        onclose={handleCloseDetailView}></c-account-view-form>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,66 @@
+<template>
+    <lightning-card class="custom-card">
+        <div class="slds-text-align_center slds-p-around_medium">
+            <h2 class="slds-text-heading_medium"> FourBeeTek</h2>
+        </div>
+        <div class="checkbox-group-container">
+            <lightning-checkbox-group name="고객 유형"
+                                      class="inline-checkbox-group"
+                                      label="고객 유형 선택"
+                                      options={options}
+                                      value={value}
+                                      required>
+            </lightning-checkbox-group>
+        </div>
+
+        <lightning-layout>
+            <lightning-layout-item size="6" padding="around-medium">
+                //
+                <div>
+                    <lightning-input type="checkbox" label="개인정보 이용 및 수집동의" name="consentToCollection" onchange={handleInputChange}></lightning-input>
+                </div>
+                //
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input type="text" label="고객명" name="customerName" onchange={handleInputChange}></lightning-input>
+                </div>
+                <div class="slds-p-around_medium">
+                    <lightning-input type="date" name="applicationDate" label="방문 일자" value={applicationDate} onchange={handleDateChange}></lightning-input>
+                </div>
+                
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-medium">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input type="text" label="전화번호"  name="phoneNumber" onchange={handleInputChange}></lightning-input>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <div class="slds-p-around_medium wide-dual-listbox">
+            <lightning-dual-listbox name="storeName"
+                                    label="전국 지점"
+                                    source-label="지점 목록"
+                                    selected-label="인입 지점"
+                                    field-level-help="고객님이 방문한 지점을 선택해주세요."
+                                    options={storeoptions}
+                                    onchange={handleChange}>
+            </lightning-dual-listbox>
+        </div>
+        <div class="selected-values-container">
+            <p class="selected-values">Selected values are: {selected}</p>
+        </div>
+        <div class="textarea-container">
+            <lightning-textarea 
+            name="SangDamDescription" 
+            label="상담 내역 기입란" 
+            onchange={handleInputChange} 
+            class="custom-textarea">
+        </lightning-textarea>
+        </div>
+        
+        <div class="submit-container">
+            <lightning-button variant="neutral" label="제출" title="Primary action with lighter look"
+            onclick={handleClick} class="submit-button">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

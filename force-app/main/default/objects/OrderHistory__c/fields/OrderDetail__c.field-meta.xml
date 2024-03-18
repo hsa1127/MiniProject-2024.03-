@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OrderDetail__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>제품명1: 수량, 제품명2: 수량, ...</inlineHelpText>
+    <label>상세내역</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

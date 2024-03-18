@@ -1,0 +1,30 @@
+<template>
+    <div class="container">
+        <div class="navigation">
+            <lightning-vertical-navigation onselect={handleSelect}>
+                <lightning-vertical-navigation-section label="제품현황">
+                    <template for:each={productTypes} for:item="type">
+                        <lightning-vertical-navigation-item 
+                            key={type} 
+                            label={type.Name} 
+                            name={type.Id}>
+                        </lightning-vertical-navigation-item>
+                    </template>
+                </lightning-vertical-navigation-section>
+                <lightning-vertical-navigation-section label="기타">
+                    <lightning-vertical-navigation-item label="고객정보" name="고객정보"></lightning-vertical-navigation-item>
+                    <lightning-vertical-navigation-item label="상담정보" name="상담정보"></lightning-vertical-navigation-item>
+                    <lightning-vertical-navigation-item label="구매기록" name="구매기록"></lightning-vertical-navigation-item>
+                </lightning-vertical-navigation-section>
+            </lightning-vertical-navigation>
+        </div>
+        <div class="product-table">
+            <lightning-datatable
+                key-field="Id"
+                data={filteredProducts}
+                columns={columns}
+                onrowselection={handleRowSelection}>
+            </lightning-datatable>
+        </div>
+    </div>
+</template>

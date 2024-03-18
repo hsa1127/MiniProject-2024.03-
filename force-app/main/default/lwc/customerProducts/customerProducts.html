@@ -1,0 +1,27 @@
+<!-- 보유상품 현황을 나타내는 카드 컴포넌트 -->
+<template>
+    <!-- 카드 타이틀과 아이콘 설정 -->
+    <lightning-card title="보유상품 현황" icon-name="standard:product">
+        <!-- 제품 데이터가 존재할 경우에만 표시 -->
+        <template if:true={products.data}>
+            <!-- 스크롤 가능한 컨테이너 설정 -->
+            <div class="slds-box slds-m-horizontal_small">
+                <div class="slds-scrollable_y" style="height:18rem" tabindex="0">
+                    <!-- 데이터 테이블에 제품 데이터와 컬럼, 행 액션 핸들러 바인딩 -->
+                    <lightning-datatable
+                        data={products.data}
+                        columns={columns}
+                        key-field="Id"
+                        onrowaction={handleRowAction}>
+                    </lightning-datatable>
+                </div>
+            </div>
+            </template>
+        <!-- 제품 데이터가 없을 때 에러 메시지 표시 -->
+        <template if:true={products.error}>
+            <div class="slds-box slds-m-horizontal_small">
+                <p>고객이 아직 물품을 구매하지 않았습니다.</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

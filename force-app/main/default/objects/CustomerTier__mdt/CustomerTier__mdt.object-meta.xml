@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>최근 90일 구매 금액 기준 고객 등급
+A등급(500만원 이상), B등급(200만원 이상), C등급(200만원 미만), D등급 (미구매)</description>
+    <label>고객 등급</label>
+    <visibility>Public</visibility>
+</CustomObject>

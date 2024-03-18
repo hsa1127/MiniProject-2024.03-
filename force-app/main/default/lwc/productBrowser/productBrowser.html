@@ -1,0 +1,26 @@
+<template>
+    <!-- 레이아웃 아이템을 12칸 크기로 설정 -->
+    <lightning-layout-item size="12">
+        <!-- 사용자 정의 컴포넌트 product-browser-form에 이벤트 핸들러 handleSearchProducts 연결 -->
+        <c-product-browser-form onfilterchange={handleSearchProducts}></c-product-browser-form>
+    </lightning-layout-item>
+
+    <!-- 제품 목록을 탭 형태로 표시 -->
+    <lightning-tabset variant="scoped">
+        <!-- 제품 목록 탭 -->
+        <lightning-tab label="제품목록">
+            <!-- 제품 데이터가 있는 경우에만 제품 타일 컴포넌트 표시 -->
+            <template if:true={products}>
+                <!-- 스크롤 가능한 Y축 설정으로 제품 타일 표시 -->
+                <div class="slds-scrollable_y" style="height:16rem" tabindex="0">
+                    <!-- 사용자 정의 컴포넌트 product-tiles에 제품 데이터와 이벤트 핸들러 handleProductSelected 연결 -->
+                    <c-product-tiles product-list={products} onproductselected={handleProductSelected}></c-product-tiles>
+                </div>
+            </template>
+            <!-- 제품 데이터가 없는 경우 메시지 표시 -->
+            <template if:false={products}>
+                <div>No products found</div>
+            </template>
+        </lightning-tab>
+    </lightning-tabset>
+</template>

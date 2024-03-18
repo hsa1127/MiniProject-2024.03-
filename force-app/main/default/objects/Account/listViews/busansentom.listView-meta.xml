@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>busansentom</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Phone__c</columns>
+    <columns>AccountType__c</columns>
+    <columns>FirstBranch__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FirstBranch__c</field>
+        <operation>equals</operation>
+        <value>부산센텀시티점</value>
+    </filters>
+    <label>부산센텀시티점</label>
+</ListView>

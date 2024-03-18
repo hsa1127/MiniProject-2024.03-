@@ -1,0 +1,31 @@
+<template>
+    <div class="slds-var-m-bottom_small">
+    <lightning-card title="연락처 검색" icon-name="utility:search">
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="phonenumber" label="전화번호" placeholder="전화번호를 입력해주세요" value={phoneNumber} onchange={handlePhoneChange}></lightning-input>
+        </div>
+        <lightning-button variant="brand" label="검색" onclick={searchAccount} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button variant="brand" label="초기화" onclick={resetForm} class="slds-m-left_x-small"></lightning-button>
+        <template if:true={account.data}>
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-tile label="검색된 고객정보" href="/path/to/somewhere">
+                    <dl class="slds-dl_horizontal">
+                        <dt class="slds-dl_horizontal__label">
+                            <p class="slds-truncate" title="name"><b>이름 :</b> {account.data.Name}</p>
+                        </dt>
+                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                            <p class="slds-truncate" title="Phone"><b>전화번호 :</b> {account.data.Phone}</p>
+                        </dd>
+                        <dt class="slds-dl_horizontal__label">
+                            <p class="slds-truncate" title="Level"><b>회원등급 :</b> {account.data.SupportTier__c}</p>
+                        </dt>
+                    </dl>
+                </lightning-tile>
+            </div>
+        </template>
+        <template if:true={account.error}>
+            <h1>관련된 정보가 없습니다. 전화번호를 다시 입력해주세요! </h1>
+        </template>
+    </lightning-card>
+</div>
+</template>

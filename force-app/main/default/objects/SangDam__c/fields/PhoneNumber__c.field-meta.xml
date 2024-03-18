@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PhoneNumber__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>휴대번호 입력시 010-XXXX-XXXX 형식으로 입력해야합니다.
+010외 011, 017 등 01X로 입력시 고객정보 생성이 불가능합니다.</inlineHelpText>
+    <label>전화번호</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Phone</type>
+</CustomField>

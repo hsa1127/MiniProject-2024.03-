@@ -1,0 +1,16 @@
+<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="12">
+            <!-- 왼쪽 컴포넌트를 전체 너비로 설정 -->
+            <lightning-card title="구매고객 조회" icon-name="utility:search">
+                <c-account-child1 ongetsearchevent={handleEvent} onresetsearchevent={resetEvent}></c-account-child1>
+            </lightning-card>
+        </lightning-layout-item>
+        <lightning-layout-item size="12">
+            <!-- 오른쪽 컴포넌트를 이전 왼쪽 컴포넌트 아래로 이동 -->
+            <lightning-card>
+                <c-account-child2 search-text-child2={searchTextParent}></c-account-child2>
+            </lightning-card>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

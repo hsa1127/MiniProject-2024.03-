@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>jumoon</fullName>
+    <columns>NAME</columns>
+    <columns>AccountName__c</columns>
+    <columns>OrderDate__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>OrderHistory__c.CompletedOrder</value>
+    </filters>
+    <label>주문건</label>
+</ListView>

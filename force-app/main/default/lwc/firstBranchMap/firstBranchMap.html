@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="고객 인입지점 위치" icon-name="custom:custom10">
+        <div class="slds-m-around_medium">
+            <template if:true={mapMarkers}>
+                <lightning-map map-markers={mapMarkers} zoom-level="15"></lightning-map>
+            </template>
+        </div>
+    </lightning-card>
+</template>

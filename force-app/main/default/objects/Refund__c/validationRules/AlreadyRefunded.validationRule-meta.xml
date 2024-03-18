@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AlreadyRefunded</fullName>
+    <active>true</active>
+    <errorConditionFormula>OrderNumber__r.RecordType.Name = &apos;환불건&apos;</errorConditionFormula>
+    <errorDisplayField>OrderNumber__c</errorDisplayField>
+    <errorMessage>이미 환불처리된 주문입니다.</errorMessage>
+</ValidationRule>

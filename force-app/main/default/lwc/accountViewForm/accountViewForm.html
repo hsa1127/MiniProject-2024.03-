@@ -1,0 +1,37 @@
+<template>
+    <div>
+        <lightning-card title="고객정보 상세보기" icon-name="standard:customers">
+            <div class="slds-m-around_medium" if:true={account}>
+                <div class="slds-m-around_medium">
+                    <div>
+                        <div class="slds-p-right_large  slds-grid slds-grid_reverse">
+                            <lightning-button-group>
+                                <lightning-button label="구매" variant="brand" onclick={navigateToRecordViewPage}
+                                    class="slds-m-top_medium"></lightning-button>
+                                <lightning-button label="상담 생성" variant="brand-outline" onclick={handleShowForm}
+                                    class="slds-m-top_medium"></lightning-button>
+                            </lightning-button-group>
+                        </div>
+                    </div>
+                    <p><b>고객명 :</b> {account.Name}</p>
+                    <p><b>고객유형 :</b> {account.AccountType__c}</p>
+                    <p><b>고객 등급 :</b> {account.SupportTier__c}</p>
+                    <p><b>고객 전화번호 :</b> {account.Phone__c}</p>
+                    <p><b>고객 이메일 :</b> {account.Email__c}</p>
+                    <p><b>ForBeeTek 총 구매액 :</b> {account.TotalPrice__c}원</p>
+                    <p><b>ForBeeTek 최근 3내월 누적금액 :</b> {account.Last90DaysTotalPrice__c}원</p>
+                    <div class="slds-p-right_large slds-grid slds-grid_reverse">
+                        <lightning-button label="닫기" onclick={cancelViewForm}
+                            class="slds-m-bottom_medium"></lightning-button>
+                    </div>
+                </div>
+            </div>
+            <!-- 상담폼보이기-->
+            <div>
+                <template if:true={isFormVisible}>
+                    <c-sang-dam-form onclose={handleFormClose}></c-sang-dam-form>
+                </template>
+            </div>
+        </lightning-card>
+    </div>
+</template>
