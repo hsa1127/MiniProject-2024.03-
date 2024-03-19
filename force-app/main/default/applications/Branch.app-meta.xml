@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>지역별 판매점</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>판매점</label>
+    <navType>Standard</navType>
+    <tabs>Branch__c</tabs>
+    <tabs>OrderHistory__c</tabs>
+    <tabs>VoC__c</tabs>
+    <tabs>SangDam__c</tabs>
+    <tabs>OrderProduct__c</tabs>
+    <tabs>Product__c</tabs>
+    <tabs>Refund__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>UtilityBar</utilityBar>
+</CustomApplication>

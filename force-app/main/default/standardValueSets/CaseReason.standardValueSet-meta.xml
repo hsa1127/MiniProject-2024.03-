@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>단순문의</fullName>
+        <default>false</default>
+        <label>단순문의</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>고장</fullName>
+        <default>false</default>
+        <label>고장</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>교환</fullName>
+        <default>false</default>
+        <label>교환</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>환불</fullName>
+        <default>false</default>
+        <label>환불</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+</StandardValueSet>

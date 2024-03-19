@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>VoC 상담종료 안내 이메일</description>
+        <name>VoCClosedEmail</name>
+        <label>VoC 상담종료 안내 이메일</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.AccountId__r.Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>FourBeeTek을 이용해주시는{!$Record.AccountId__r.Name}님, 상담 종료 안내</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>VoCClosedEmailTemplate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>VoCClosedFlow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>VoC종료Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>VoCClosedEmail</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>VoCProgress__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>상담종료</stringValue>
+            </value>
+        </filters>
+        <object>VoC__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <description>VoC 상담종료 안내 이메일 템플릿</description>
+        <name>VoCClosedEmailTemplate</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        body { font-family: Arial, sans-serif; }
+        .email-container { max-width: 600px; margin: auto; border: 1px solid #ccc; padding: 20px; }
+        .header { background-color: #f4f4f4; padding: 10px; text-align: center; }
+        .content { margin-top: 20px; color:#000;}
+        .footer { margin-top: 30px; text-align: center; font-size: 0.8em; color: #777; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;email-container&quot;&gt;
+        &lt;div class=&quot;header&quot;&gt;
+            &lt;h2&gt;상담 종료 안내&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;content&quot;&gt;
+            &lt;p&gt;안녕하세요, {!$Record.AccountId__r.Name}님.&lt;/p&gt;
+            &lt;p&gt;귀하와의 상담이 성공적으로 종료되었음을 알려드립니다. &lt;/p&gt;
+            &lt;p&gt;귀하의 소중한 시간을 내어 주셔서 감사합니다.&lt;/p&gt;
+            &lt;p&gt;상담에 대한 요약은 다음과 같습니다:&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;상담 일시 : {!$Record.CreatedDate__c}&lt;/li&gt;
+                &lt;li&gt;상담 번호 : {!$Record.Name}&lt;/li&gt;
+                &lt;li&gt;{!$Record.Description__c}&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;p&gt;추가적인 질문이나 필요하신 사항이 있으시면 언제든지 연락 주시기 바랍니다.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;footer&quot;&gt;
+            &lt;p&gt;감사합니다.&lt;/p&gt;
+            &lt;p&gt;FouBeeTek 고객 서비스팀&lt;/p&gt;
+            &lt;p&gt;{!$User.LastName}{!$User.FirstName} 드림&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+</Flow>

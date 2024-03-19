@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>pshared</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>제품공유</label>
+        <sharedTo>
+            <role>Manager</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Sales_Rep</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

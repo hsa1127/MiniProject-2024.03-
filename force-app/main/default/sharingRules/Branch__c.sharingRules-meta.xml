@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>GroupB</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>B그룹 사용자들은 모든 판매 정보를 열람 할 수 있다.</description>
+        <label>B그룹</label>
+        <sharedTo>
+            <role>Manager</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Sales_Rep</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

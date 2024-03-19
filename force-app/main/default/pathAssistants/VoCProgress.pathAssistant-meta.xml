@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>VoC__c</entityName>
+    <fieldName>VoCProgress__c</fieldName>
+    <masterLabel>VoC 진행현황</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>AccountId__c</fieldNames>
+        <info>&lt;p&gt;고객과의 상담시작&lt;/p&gt;</info>
+        <picklistValueName>상담시작</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;고객과의 상담종료&lt;/p&gt;</info>
+        <picklistValueName>상담종료</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;해당 상담자가 고객의 요구를 해결하지 못하고 다른 CS팀으로 이관해야하는 경우, 상담진행 / 상담이관으로 유지&lt;/p&gt;</info>
+        <picklistValueName>상담진행 / 상담이관</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

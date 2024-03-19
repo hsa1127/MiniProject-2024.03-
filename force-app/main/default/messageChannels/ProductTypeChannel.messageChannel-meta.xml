@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Channel for selecting a product type</description>
+    <isExposed>true</isExposed>
+    <masterLabel>ProductTypeChannel</masterLabel>
+</LightningMessageChannel>
