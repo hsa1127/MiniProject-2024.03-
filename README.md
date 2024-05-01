@@ -1,18 +1,10 @@
-# Salesforce DX Project: Next Steps
+![image](https://github.com/hsa1127/MiniProject-2024.03-/assets/155035048/c4403fce-d39e-4a88-ad50-be39182c39bf)
+![image](https://github.com/hsa1127/MiniProject-2024.03-/assets/155035048/c7a62983-a1ef-4beb-b26f-7c3432caadd8)
+![image](https://github.com/hsa1127/MiniProject-2024.03-/assets/155035048/b6626f56-b41b-4c08-9111-4d6ccfe76fc6)
+![image](https://github.com/hsa1127/MiniProject-2024.03-/assets/155035048/7b195fda-8c94-4430-be0b-0f1912089d3f)
+![image](https://github.com/hsa1127/MiniProject-2024.03-/assets/155035048/560b28d4-f8cd-4488-aa8e-19043eb53f3c)
+![image](https://github.com/hsa1127/MiniProject-2024.03-/assets/155035048/76a696dd-0a0a-4b40-aa5d-bb09f47b10c1)
+![image](https://github.com/hsa1127/MiniProject-2024.03-/assets/155035048/149e9659-a874-4b5a-9d0e-7828bbe55bbb)
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
-
-## How Do You Plan to Deploy Your Changes?
-
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
-
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+2024.02~ 2024.03 (기간 1달)
+참여 인원: 4명 ( 담당 부분 : 본사담당자 권한 페이지 / Sales 환불,구매에 따른 구매금액 필드 update ) 
